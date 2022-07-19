@@ -1,0 +1,23 @@
+[33mcommit 9a40a318a542c37d6a82ef9aaf80660d275b2d2f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: peppermint20 <voben21@gmail.com>
+Date:   Tue Jul 19 14:58:57 2022 -0700
+
+    finished
+
+[33mcommit 7c79ce6d4c334db5f2c10135214f2b9ad1b6e0b8[m
+Author: peppermint20 <voben21@gmail.com>
+Date:   Tue Jul 19 01:20:28 2022 -0700
+
+    Updated javascript code to use DOM manipulation
+
+[33mcommit c96adfdab9768678c7e88125998b7b8d585495dd[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: peppermint20 <voben21@gmail.com>
+Date:   Sun Jul 10 21:02:38 2022 -0700
+
+    Added javascript logic to rock, paper, scissors
+
+[33mcommit 706b98d0800faf64daaee503dd5c3370e3e5ece4[m
+Author: peppermint20 <77523842+peppermint20@users.noreply.github.com>
+Date:   Sun Jul 10 19:49:28 2022 -0700
+
+    Initial commit
