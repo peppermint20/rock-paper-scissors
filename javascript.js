@@ -1,9 +1,20 @@
-const computerScore = 0;
-const playerScore = 0;
-const choices = ["rock", "scissors", "paper"];
+const choices = ["Rock", "Scissors", "Paper"];
 const buttons = document.querySelectorAll("div.buttons button");
+const playerPoints = document.querySelector("#player-score");
+const computerPoints = document.querySelector("#computer-score");
+const results = document.querySelector("div.result");
+const reset = document.querySelector("#reset");
 
 
+
+let computerScore = 0;
+let playerScore = 0;
+playerPoints.textContent = playerScore;
+computerPoints.textContent = computerScore;
+
+reset.addEventListener("click", () => {location.reload();})
+
+buttons.forEach(button => button.addEventListener("click", playerChoice));
 
 function computerPlay()
 {
@@ -13,76 +24,114 @@ function computerPlay()
     return choices[computerChoice];
 }
 
-
-
 function playRound(playerSelection, computerSelection)
 {
-    playerSelection = playerSelection.toLowerCase();
     console.log("Computer chose: " + computerSelection);
+
     if (playerSelection == computerSelection)
     {
         //draw
-        return "Draw!";
+        playerPoints.textContent = ++playerScore;
+        computerPoints.textContent = ++computerScore;
+        results.textContent = `${playerSelection} ties with ${computerSelection} both gain points!`;
     }
-
-    switch(playerSelection)
+    else
     {
-        case "rock":
+        
+        switch(playerSelection)
         {
-            if (computerSelection === "scissors")
+            case "Rock":
             {
-                return "Player wins!";
+                if (computerSelection === "Scissors")
+                {
+                    //player win
+                    playerPoints.textContent = ++playerScore;
+                    results.textContent = `${playerSelection} beats ${computerSelection}, player wins!`;
+                }
+                else if (computerSelection === "Paper")
+                {
+                    //computer win
+                    computerPoints.textContent = ++computerScore;
+                    results.textContent = `${computerSelection} beats ${playerSelection}, computer wins!`;
+                }
+                break;
             }
-            else if (computerSelection === "paper")
+            case "Paper":
             {
-                return "Computer wins!";
+                if (computerSelection === "Rock")
+                {
+                    playerPoints.textContent = ++playerScore;
+                    results.textContent = `${playerSelection} beats ${computerSelection}, player wins!`
+                }
+                else if (computerSelection === "Scissors")
+                {
+                    computerPoints.textContent = ++computerScore;
+                    results.textContent = `${computerSelection} beats ${playerSelection}, computer wins!`;
+                }
+                break;
             }
+            case "Scissors":
+            {
+                if (computerSelection === "Paper")
+                {
+                    playerPoints.textContent = ++playerScore;
+                    results.textContent = `${playerSelection} beats ${computerSelection}, player wins!`
+                }
+                else if (computerSelection === "Rock")
+                {
+                    computerPoints.textContent = ++computerScore;
+                    results.textContent = `${computerSelection} beats ${playerSelection}, computer wins!`;
+                }
+                break;
+            }
+            default:
+                console.error("Error in computerPlay()");
         }
-        case "paper":
-        {
-            if (computerSelection === "rock")
-            {
-                return "Player wins!";
-            }
-            else if (computerSelection === "scissors")
-            {
-                return "Computer wins!";
-            }
-        }
-        case "scissors":
-        {
-            if (computerSelection === "paper")
-            {
-                return "Player wins!";
-            }
-            else if (computerSelection === "rock")
-            {
-                return "Computer wins!";
-            }
-        }
-        case "error":
-            console.error("Error in computerPlay()");
     }
 }
 
 
-function game()
-{
-    for (let i = 0; i < 5; ++i)
-    {
-        let result = playRound(userChoice, computerPlay());
-        console.log(result);
-    }
-}
+// function game()
+// {
+//     for (let i = 0; i < 5; ++i)
+//     {
+//         let result = playRound(userChoice, computerPlay());
+//         console.log(result);
+//     }
+// }
 
 function playerChoice(e)
 {
     let userChoice = e.target.id;
+    //console.log("target:" + e.target.id);
     playRound(userChoice, computerPlay());
+    checkWinner();
+
 }
 
 function checkWinner()
 {
+    if (playerScore === 5 || computerScore === 5)
+    {
+        if (playerScore === computerScore)
+        {
+            results.textContent = "Draw!";
+        }
+        else if (playerScore > computerScore)
+        {
+            results.textContent = "Player wins!";
+        }
+        else
+        {
+            results.textContent = "Computer wins!";
+        }
+        
+        buttons.forEach(button => button.removeEventListener("click", playerChoice))
+       
     
+    }
 }
-buttons.forEach(button => button.addEventListener("click", playerChoice));
+
+// List out the scoring etc
+
+

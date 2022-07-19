@@ -1,0 +1,65 @@
+body
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1
+{
+    font-size: 80px;
+}
+#Rock,
+#Scissors,
+#Paper
+{
+    padding: 5px 20px;
+    font-size: 41px;
+}
+
+.label,
+.scores
+{
+    display: flex;
+}
+
+.label
+{
+    justify-content: center;
+    margin-top: 20px;
+    gap: 40px;
+    font-size: 14px;
+}
+
+#computer-label
+{
+    margin-left: 13px;
+}
+
+
+
+#player-score,
+#computer-score
+{
+    padding: 5px 50px;
+    border: solid;
+    margin: 0 8px;
+    font-size: 30px;
+}
+
+.result
+{
+    text-align: center;
+    border: solid;
+    margin: 5px 0;
+    min-width: 250px;
+    min-height: 50px;
+}
+
+#reset
+{
+    margin-top: 20px;
+    font-size: 20px;
+}
