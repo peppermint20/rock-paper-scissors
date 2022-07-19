@@ -56,7 +56,9 @@ h1
     border: solid;
     margin: 5px 0;
     flex-grow: 0;
+    flex-shrink: 0;
     min-width: 330px;
+
     min-height: 50px;
 }
 
