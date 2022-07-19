@@ -43,7 +43,7 @@ h1
 #player-score,
 #computer-score
 {
-    padding: 5px 60px;
+    padding: 5px 70px;
     border: solid;
     margin: 0 8px;
     font-size: 30px;
@@ -55,7 +55,8 @@ h1
     flex-wrap: wrap;
     border: solid;
     margin: 5px 0;
-    min-width: 290px;
+    flex-grow: 0;
+    min-width: 330px;
     min-height: 50px;
 }
 
