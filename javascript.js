@@ -1,21 +1,19 @@
+const computerScore = 0;
+const playerScore = 0;
+const choices = ["rock", "scissors", "paper"];
+const buttons = document.querySelectorAll("div.buttons button");
+
+
+
 function computerPlay()
 {
     // return a string
-    let computerChoice = Math.floor((Math.random()* 3) + 1);
-
+    let computerChoice = Math.floor((Math.random() * choices.length));
     // randomly return rock, paper, or scissors
-    switch(computerChoice)
-    {
-        case 1:
-             "rock";
-        case 2:
-            return "scissors";
-        case 3:
-            return "paper";
-        default:
-            return "error";
-    }
+    return choices[computerChoice];
 }
+
+
 
 function playRound(playerSelection, computerSelection)
 {
@@ -67,12 +65,24 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
+
 function game()
 {
     for (let i = 0; i < 5; ++i)
     {
-        let userChoice = prompt("Enter rock, paper, or scissors");
         let result = playRound(userChoice, computerPlay());
         console.log(result);
     }
 }
+
+function playerChoice(e)
+{
+    let userChoice = e.target.id;
+    playRound(userChoice, computerPlay());
+}
+
+function checkWinner()
+{
+    
+}
+buttons.forEach(button => button.addEventListener("click", playerChoice));
