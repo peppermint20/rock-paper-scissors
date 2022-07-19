@@ -58,7 +58,7 @@ h1
     flex-grow: 0;
     flex-shrink: 0;
     min-width: 330px;
-
+    max-width: 330px;
     min-height: 50px;
 }
 
