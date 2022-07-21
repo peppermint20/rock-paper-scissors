@@ -25,7 +25,7 @@ h1
 {
     margin: 0 10px;
     padding: 5px 20px;
-    font-size: 38px;
+    font-size: 40px;
 }
 
 .label,
@@ -42,10 +42,6 @@ h1
     min-width: 333px;
 }
 
-#computer-label
-{
-    margin-left: 34px;
-}
 
 
 
@@ -55,7 +51,7 @@ h1
     padding: 5px 70px;
     border: solid;
     margin: 0 8px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .result
@@ -66,13 +62,15 @@ h1
     flex-wrap: wrap;
     border: solid;
     align-items: center;
+    padding: 12px 0;
     margin: 5px 0;
     flex-grow: 0;
     flex-shrink: 0;
-    min-width: 330px;
-    max-width: 330px;
+    min-width: 338px;
+    max-width: 338px;
     min-height: 50px;
-    font-size: 16px;
+    max-height: 50px;
+    font-size: 24px;
 }
 
 #reset
