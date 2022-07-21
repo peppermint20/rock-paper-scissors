@@ -11,12 +11,21 @@ h1
 {
     font-size: 80px;
 }
+
+.buttons 
+{
+    display: flex;
+    border: solid;
+    justify-content: center;
+    
+}
 #Rock,
 #Scissors,
 #Paper
 {
+    margin: 0 10px;
     padding: 5px 20px;
-    font-size: 41px;
+    font-size: 38px;
 }
 
 .label,
@@ -27,15 +36,15 @@ h1
 
 .label
 {
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 20px;
-    gap: 40px;
     font-size: 14px;
+    min-width: 333px;
 }
 
 #computer-label
 {
-    margin-left: 13px;
+    margin-left: 34px;
 }
 
 
