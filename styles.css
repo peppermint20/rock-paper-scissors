@@ -51,9 +51,12 @@ h1
 
 .result
 {
+    display:flex;
+    justify-content: center;
     text-align: center;
     flex-wrap: wrap;
     border: solid;
+    align-items: center;
     margin: 5px 0;
     flex-grow: 0;
     flex-shrink: 0;
